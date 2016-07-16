@@ -1,0 +1,24 @@
+fieldset {
+	background-color: #e6e6e6; /* rgba(0,0,0,.1) = #e6e6e6 */
+	box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    padding: 5px 15px 15px 15px;
+}
+
+.labvalor, .valor, .somar, .resvalor {
+	width: 50%;
+	float: left;
+}
+
+.labpeso, .peso, .resetar, .respeso {
+	width: 50%;
+	float: rigth;
+}
+
+.somar, .resetar {
+	margin: 5px 0px 5px 0px;
+}
+
+#total {
+	width: 100%;
+	border-bottom: 1px solid #c0c0c0;
+}
