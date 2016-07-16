@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="pt-br">
+<html lang="pt-BR">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,12 +56,12 @@
 				<div class="row">
 					<main class="col-sm-offset-3 col-sm-6">
 						<h2 class="text-center" style="margin-bottom: 1px">Calculadora de Valor e Peso</h2>
-						<form name="calcform" method="post" action="">
+						<form name="calcform">
 							<fieldset>
 								<label class="text-center labvalor">VALOR</label>
 								<label class="text-center labpeso">PESO</label>
 
-								<input type="text" name="valor1" id="valor1" class="form-control valor" value=0>
+								<input type="text" name="valor1" id="valor1" class="form-control valor" value=0 autofocus>
 								<input type="text" name="peso1" id="peso1" class="form-control peso" value=0>
 
 								<input type="text" name="valor2" id="valor2" class="form-control valor" value=0>
@@ -108,11 +108,8 @@
 		<!-- Calculadora em jQuery | Autor: Carlu P. Azevedo -->
 		<script>
 			$(document).ready(function(){
-				// Dá foco para campo 'valor1' ao carregar página
-				window.onload = function(){var input = document.getElementById("valor1").focus();}
-
 				var somavalor = 0,
-					somapeso = 0;
+					  somapeso = 0;
 
 				$("form").find(".valor").setMask("moeda");
 				$("form").find(".peso").setMask("peso");
