@@ -1,15 +1,19 @@
-fieldset {
-	background-color: #e6e6e6; /* rgba(0,0,0,.1) = #e6e6e6 */
-	box-shadow: 0px 0px 5px rgba(0,0,0,.5);
-    padding: 5px 15px 15px 15px;
+main {
+	margin-bottom: 15px;
 }
 
-.label-valor, .valor, #somar {
+form {
+	background-color: #e6e6e6; /* rgba(0,0,0,.1) = #e6e6e6 */
+	box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+	padding: 5px 15px 15px 15px;
+}
+
+.label-valor, .valor, #somar, #res_valor {
 	width: 50%;
 	float: left;
 }
 
-.label-peso, .peso, #resetar {
+.label-peso, .peso, #resetar, #res_peso {
 	width: 50%;
 	float: rigth;
 }

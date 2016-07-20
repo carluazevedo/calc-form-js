@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Calculadora</title>
+    <title>Calculadora 2.0</title>
 
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,7 @@
       <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
-          <a class="navbar-brand" href="#">KronaCalc</a>
+          <a class="navbar-brand" href="#">KronaCalc2.0</a>
         </div>
       </nav>
     </header>
@@ -44,7 +44,6 @@
         <div class="row">
           <div class="col-sm-6 col-sm-offset-3">
             <form name="calculadora" method="post" action="">
-              <fieldset>
                 <label class="text-center label-valor">VALOR</label>
                 <label class="text-center label-peso">PESO</label>
 
@@ -78,18 +77,22 @@
                 <input type="text" name="valor10" id="valor10" class="form-control valor" value=0>
                 <input type="text" name="peso10" id="peso10" class="form-control peso" value=0>
 
-                <input class="sr-only" type="button" value="+">
-
                 <span id="insert_point"></span>
 
-                <input type="button" value="Calcular" id="somar" class="btn btn-success form-control">
-                <input type="button" value="Limpar campos" id="resetar" class="btn btn-danger form-control" onclick="location.reload(true)">
+                <button type="button" id="add_campos" class="btn btn-primary form-control" onclick="addField()">ADICIONAR NOVOS CAMPOS</button>
+
+                <input type="button" value="CALCULAR" id="somar" class="btn btn-success form-control" onclick="sumValues()">
+                <input type="button" value="LIMPAR CAMPOS" id="resetar" class="btn btn-danger form-control" onclick="location.reload(true)">
 
                 <label id="total" class="text-center">TOTAL</label>
 
-                <input type="button" name="res_valor" id="res_valor" class="btn btn-default form-control valor" value="VALOR TOTAL">
-                <input type="button" name="res_peso" id="res_peso" class="btn btn-default form-control text-right peso" value="PESO TOTAL">
-              </fieldset>
+                <input type="text" name="res_valor" id="res_valor" class="btn btn-default form-control" value=0 readonly>
+                <input type="text" name="res_peso" id="res_peso" class="btn btn-default form-control" value=0 readonly>
+
+                <!-- 
+                <input type="button" name="res_valor" id="res_valor" class="btn btn-default form-control" value="VALOR">
+                <input type="button" name="res_peso" id="res_peso" class="btn btn-default form-control" value="PESO">
+                 -->
             </form>
           </div><!-- .col-sm-6 -->
         </div><!-- .row -->
