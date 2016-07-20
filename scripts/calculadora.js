@@ -18,11 +18,11 @@ $(document).ready(function(){
 			somapeso += parseFloat($(this).val().replace(",", "."));
 		});
 
-		$("#resvalor").val(somavalor.toFixed(2).replace(".", ","));
-		$("#respeso").val(somapeso.toFixed(3).replace(".", ","));
+		$("#res_valor").val(somavalor.toFixed(2).replace(".", ","));
+		$("#res_peso").val(somapeso.toFixed(3).replace(".", ","));
 
-		$("#resvalor").setMask("moeda-decimal");
-		$("#respeso").setMask("peso-decimal");
+		$("#res_valor").setMask("moeda-decimal");
+		$("#res_peso").setMask("peso-decimal");
 
 		somavalor = 0;
 		somapeso = 0;

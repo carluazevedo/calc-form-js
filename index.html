@@ -1,68 +1,107 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<!-- meta name="viewport" content="width=device-width, initial-scale=1" -->
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>Calculadora</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Calculadora</title>
 
-		<!-- Bootstrap -->
-		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-		<link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+    <link rel="stylesheet" href="styles/custom.css">
 
-		<meta name="author" content="Carlu P. Azevedo">
-		<meta name="description" content="Calculadora simples em jQuery">
-		<meta name="version" content="1.2">
-		<meta name="creation" content="24-set-2015">
-		<meta name="last-modification" content="17-jul-2016">
-	</head>
+    <meta name="author" content="Carlu P. Azevedo">
+    <meta name="description" content="Calculadora simples em Javascript e jQuery">
+    <meta name="version" content="2.0">
+    <meta name="creation" content="24-set-2015">
+    <meta name="last-modification" content="20-jul-2016">
+  </head>
 
-	<body>
-		<header>
-			<nav class="navbar navbar-inverse navbar-static-top">
-				<div class="container-fluid">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand" href="#">KronaCalc</a>
-				</div>
-			</nav>
-		</header>
+  <body>
+    <header>
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <a class="navbar-brand" href="#">KronaCalc</a>
+        </div>
+      </nav>
+    </header>
 
-		<section>
-			<h1>Calculadora de Valor e Peso</h1>
-			<div class="container">
-				<div class="row">
-					<form name="calculadora" method="post" action="">
-						<div class="col-sm-3">
-							<input type="text" name="valor1" id="valor1" class="form-control valor" value=0>
-							<input type="button" value="Calcular" id="somar" class="btn btn-success form-control somar">
-							<input type="text" name="resvalor" id="resvalor" class="form-control text-right resvalor" value="0,00" readonly>
-						</div>
-						<div class="col-sm-3">
-							<input type="text" name="peso1" id="peso1" class="form-control peso" value=0>
-							<input type="button" value="Limpar campos" id="resetar" class="btn btn-danger form-control resetar" onclick="location.reload(true)">
-							<input type="text" name="respeso" id="respeso" class="form-control text-right respeso" value="0,000" readonly>
-						</div>
-					</form>
-				</div>
-			</div>
-		</section>
+    <main>
+      <h1 class="text-center">Calculadora de Valor e Peso</h1>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            <form name="calculadora" method="post" action="">
+              <fieldset>
+                <label class="text-center label-valor">VALOR</label>
+                <label class="text-center label-peso">PESO</label>
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="jquery/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="bootstrap/js/bootstrap.min.js"></script>
-		<script src="plugins/meiomask/meiomask.min.js"></script>
-		<script src="plugins/enter2tab/enter2tab.js"></script>
-		<script src="scripts/calculadora.js"></script>
-	</body>
+                <input type="text" name="valor1" id="valor1" class="form-control valor" value=0>
+                <input type="text" name="peso1" id="peso1" class="form-control peso" value=0>
+
+                <input type="text" name="valor2" id="valor2" class="form-control valor" value=0>
+                <input type="text" name="peso2" id="peso2" class="form-control peso" value=0>
+
+                <input type="text" name="valor3" id="valor3" class="form-control valor" value=0>
+                <input type="text" name="peso3" id="peso3" class="form-control peso" value=0>
+
+                <input type="text" name="valor4" id="valor4" class="form-control valor" value=0>
+                <input type="text" name="peso4" id="peso4" class="form-control peso" value=0>
+
+                <input type="text" name="valor5" id="valor5" class="form-control valor" value=0>
+                <input type="text" name="peso5" id="peso5" class="form-control peso" value=0>
+
+                <input type="text" name="valor6" id="valor6" class="form-control valor" value=0>
+                <input type="text" name="peso6" id="peso6" class="form-control peso" value=0>
+
+                <input type="text" name="valor7" id="valor7" class="form-control valor" value=0>
+                <input type="text" name="peso7" id="peso7" class="form-control peso" value=0>
+
+                <input type="text" name="valor8" id="valor8" class="form-control valor" value=0>
+                <input type="text" name="peso8" id="peso8" class="form-control peso" value=0>
+
+                <input type="text" name="valor9" id="valor9" class="form-control valor" value=0>
+                <input type="text" name="peso9" id="peso9" class="form-control peso" value=0>
+
+                <input type="text" name="valor10" id="valor10" class="form-control valor" value=0>
+                <input type="text" name="peso10" id="peso10" class="form-control peso" value=0>
+
+                <input class="sr-only" type="button" value="+">
+
+                <span id="insert_point"></span>
+
+                <input type="button" value="Calcular" id="somar" class="btn btn-success form-control">
+                <input type="button" value="Limpar campos" id="resetar" class="btn btn-danger form-control" onclick="location.reload(true)">
+
+                <label id="total" class="text-center">TOTAL</label>
+
+                <input type="button" name="res_valor" id="res_valor" class="btn btn-default form-control valor" value="VALOR TOTAL">
+                <input type="button" name="res_peso" id="res_peso" class="btn btn-default form-control text-right peso" value="PESO TOTAL">
+              </fieldset>
+            </form>
+          </div><!-- .col-sm-6 -->
+        </div><!-- .row -->
+      </div><!-- .container-fluid -->
+    </main>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/meiomask/meiomask.min.js"></script>
+    <script src="plugins/enter2tab/enter2tab.js"></script>
+    <script src="scripts/calculadora.js"></script>
+  </body>
 </html>
