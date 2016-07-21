@@ -9,7 +9,7 @@ $(document).ready(function(){
     $('form').find('#res_peso').setMask('peso-decimal');
 });
 
-window.onload = document.forms[0].valor1.focus();
+window.onload = document.forms[0].valor1.select();
 
 var v = new Array();
 var p = new Array();
