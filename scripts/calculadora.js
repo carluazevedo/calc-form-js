@@ -2,14 +2,14 @@
  * Calculadora simples em Javascript e jQuery
  * Autor: Carlu P. Azevedo
  */
+window.onload = document.forms[0].valor1.select();
+
 $(document).ready(function(){
     $('form').find('.valor').setMask('moeda');
     $('form').find('.peso').setMask('peso');
     $('form').find('#res_valor').setMask('moeda-decimal');
     $('form').find('#res_peso').setMask('peso-decimal');
 });
-
-window.onload = document.forms[0].valor1.select();
 
 var v = new Array();
 var p = new Array();
@@ -45,12 +45,14 @@ function addField() {
     vin.setAttribute('id', 'valor' + v_index);
     vin.setAttribute('class', 'form-control valor');
     vin.setAttribute('value', 0);
+    vin.setAttribute('title', 'Valor ' + v_index);
     /* Peso */
     pin.setAttribute('type', 'text');
     pin.setAttribute('name', 'peso' + p_index);
     pin.setAttribute('id', 'peso' + p_index);
     pin.setAttribute('class', 'form-control peso');
     pin.setAttribute('value', 0);
+    pin.setAttribute('title', 'Peso ' + p_index);
 
     /* Inserção dos novos elementos */
     document.forms[0].insertBefore(vin, ip);

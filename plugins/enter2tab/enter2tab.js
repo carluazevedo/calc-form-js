@@ -31,7 +31,7 @@ $(document).keydown(function(e) {
       } // Otherwise follow the link/button as by design, or put new line in textarea
 
       // Focus on the next item (either previous or next depending on shift)
-      focusable.eq(focusable.index(self) + (e.shiftKey ? -1 : 1)).focus();
+      focusable.eq(focusable.index(self) + (e.shiftKey ? -1 : 1)).select();
 
       return false;
     }

@@ -8,6 +8,9 @@ form {
 	padding: 5px 15px 15px 15px;
 }
 
+.modal-title {
+	color: #337ab7;
+}
 .valor, #label-valor, #somar, #res_valor {
 	width: 50%;
 	float: left;
@@ -25,4 +28,8 @@ form {
 #total {
 	width: 100%;
 	border-bottom: 1px solid #c0c0c0;
+}
+
+#dicas-lista li {
+	padding-bottom: 10px;
 }

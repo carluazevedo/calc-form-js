@@ -25,10 +25,38 @@
     <meta name="description" content="Calculadora simples em Javascript e jQuery">
     <meta name="version" content="2.0">
     <meta name="creation" content="24-set-2015">
-    <meta name="last-modification" content="20-jul-2016">
+    <meta name="last-modification" content="22-jul-2016">
   </head>
 
   <body>
+    <!-- Modal markup -->
+    <div class="modal fade" id="dicas-modal" tabindex="-1" role="dialog" aria-labelledby="dicasModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">
+              <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Dicas para utilização da calculadora
+            </h4>
+          </div>
+          <div class="modal-body">
+            <ol id="dicas-lista">
+              <li>Ao clicar em <strong>LIMPAR CAMPOS</strong> o primeiro campo será <strong>selecionado automaticamente</strong>, bastando apenas digitar os valores.</li>
+              <li>Para avançar para o <strong>próximo campo</strong> basta pressionar a tecla <kbd>Enter</kbd>.</li>
+              <li>Para retornar para o <strong>campo anterior</strong> basta pressionar as teclas <kbd>Shift&nbsp;+&nbsp;Enter</kbd>.</li>
+              <li>Mantenha o cursor do mouse sobre qualquer campo de <strong>valor</strong> ou <strong>peso</strong> por algum tempo para exibir o seu <strong>nome</strong>.</li>
+              <li>Não existe <strong>limitação</strong> com relação a quantidade de novos campos adicionados.</li>
+              <li>Quando um novo campo for adicionado ele será <strong>selecionado automaticamente</strong>, bastando apenas continuar digitando os valores.</li>
+            </ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- /Modal markup -->
+
     <header>
       <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container-fluid">
@@ -46,10 +74,14 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#" onclick="">Ajuda <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></li>
+              <li>
+                <a href="#" id="dicas" data-toggle="modal" data-target="#dicas-modal">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Dicas de utilização
+                </a>
+              </li>
             </ul>
-          </div>
-        </div>
+          </div><!-- /.collapse -->
+        </div><!-- /.container-fluid -->
       </nav>
     </header>
 
@@ -62,35 +94,35 @@
                 <label id="label-valor" class="text-center">VALOR</label>
                 <label id="label-peso" class="text-center">PESO</label>
 
-                <input type="text" name="valor1" id="valor1" class="form-control valor" value="">
-                <input type="text" name="peso1" id="peso1" class="form-control peso" value="">
+                <input type="text" name="valor1" id="valor1" class="form-control valor" value="" title="Valor 1">
+                <input type="text" name="peso1" id="peso1" class="form-control peso" value="" title="Peso 1">
 
-                <input type="text" name="valor2" id="valor2" class="form-control valor" value="">
-                <input type="text" name="peso2" id="peso2" class="form-control peso" value="">
+                <input type="text" name="valor2" id="valor2" class="form-control valor" value="" title="Valor 2">
+                <input type="text" name="peso2" id="peso2" class="form-control peso" value="" title="Peso 2">
 
-                <input type="text" name="valor3" id="valor3" class="form-control valor" value="">
-                <input type="text" name="peso3" id="peso3" class="form-control peso" value="">
+                <input type="text" name="valor3" id="valor3" class="form-control valor" value="" title="Valor 3">
+                <input type="text" name="peso3" id="peso3" class="form-control peso" value="" title="Peso 3">
 
-                <input type="text" name="valor4" id="valor4" class="form-control valor" value="">
-                <input type="text" name="peso4" id="peso4" class="form-control peso" value="">
+                <input type="text" name="valor4" id="valor4" class="form-control valor" value="" title="Valor 4">
+                <input type="text" name="peso4" id="peso4" class="form-control peso" value="" title="Peso 4">
 
-                <input type="text" name="valor5" id="valor5" class="form-control valor" value="">
-                <input type="text" name="peso5" id="peso5" class="form-control peso" value="">
+                <input type="text" name="valor5" id="valor5" class="form-control valor" value="" title="Valor 5">
+                <input type="text" name="peso5" id="peso5" class="form-control peso" value="" title="Peso 5">
 
-                <input type="text" name="valor6" id="valor6" class="form-control valor" value="">
-                <input type="text" name="peso6" id="peso6" class="form-control peso" value="">
+                <input type="text" name="valor6" id="valor6" class="form-control valor" value="" title="Valor 6">
+                <input type="text" name="peso6" id="peso6" class="form-control peso" value="" title="Peso 6">
 
-                <input type="text" name="valor7" id="valor7" class="form-control valor" value="">
-                <input type="text" name="peso7" id="peso7" class="form-control peso" value="">
+                <input type="text" name="valor7" id="valor7" class="form-control valor" value="" title="Valor 7">
+                <input type="text" name="peso7" id="peso7" class="form-control peso" value="" title="Peso 7">
 
-                <input type="text" name="valor8" id="valor8" class="form-control valor" value="">
-                <input type="text" name="peso8" id="peso8" class="form-control peso" value="">
+                <input type="text" name="valor8" id="valor8" class="form-control valor" value="" title="Valor 8">
+                <input type="text" name="peso8" id="peso8" class="form-control peso" value="" title="Peso 8">
 
-                <input type="text" name="valor9" id="valor9" class="form-control valor" value="">
-                <input type="text" name="peso9" id="peso9" class="form-control peso" value="">
+                <input type="text" name="valor9" id="valor9" class="form-control valor" value="" title="Valor 9">
+                <input type="text" name="peso9" id="peso9" class="form-control peso" value="" title="Peso 9">
 
-                <input type="text" name="valor10" id="valor10" class="form-control valor" value="">
-                <input type="text" name="peso10" id="peso10" class="form-control peso" value="">
+                <input type="text" name="valor10" id="valor10" class="form-control valor" value="" title="Valor 10">
+                <input type="text" name="peso10" id="peso10" class="form-control peso" value="" title="Peso 10">
 
                 <span id="insert_point"></span>
 
@@ -109,17 +141,18 @@
                 <!-- 
                 <input type="button" name="res_valor" id="res_valor" class="btn btn-default form-control" value="VALOR">
                 <input type="button" name="res_peso" id="res_peso" class="btn btn-default form-control" value="PESO">
-                 -->
+                -->
             </form>
-          </div><!-- .col-sm-6 -->
-        </div><!-- .row -->
-      </div><!-- .container-fluid -->
+          </div><!-- /.col-sm-6 -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
     </main>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="jquery/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap-activate-plugins.js"></script>
     <script src="plugins/meiomask/meiomask.min.js"></script>
     <script src="plugins/enter2tab/enter2tab.js"></script>
     <script src="scripts/calculadora.js"></script>
