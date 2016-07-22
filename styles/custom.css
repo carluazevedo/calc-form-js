@@ -8,12 +8,12 @@ form {
 	padding: 5px 15px 15px 15px;
 }
 
-.label-valor, .valor, #somar, #res_valor {
+.valor, #label-valor, #somar, #res_valor {
 	width: 50%;
 	float: left;
 }
 
-.label-peso, .peso, #resetar, #res_peso {
+.peso, #label-peso, #resetar, #res_peso {
 	width: 50%;
 	float: rigth;
 }
