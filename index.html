@@ -11,7 +11,7 @@
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -21,11 +21,11 @@
     <link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
     <link rel="stylesheet" href="styles/custom.css">
 
-    <meta name="author" content="Carlu P. Azevedo">
     <meta name="description" content="Calculadora simples em Javascript e jQuery">
-    <meta name="version" content="2.0">
+    <meta name="author" content="Carlu P. Azevedo">
+    <meta name="version" content="2.0.1">
     <meta name="creation" content="24-set-2015">
-    <meta name="last-modification" content="22-jul-2016">
+    <meta name="last-modification" content="24-jul-2016">
   </head>
 
   <body>
@@ -47,6 +47,7 @@
               <li>Mantenha o cursor do mouse sobre qualquer campo de <strong>valor</strong> ou <strong>peso</strong> por algum tempo para exibir o seu <strong>nome</strong>.</li>
               <li>Não existe <strong>limitação</strong> com relação a quantidade de novos campos adicionados.</li>
               <li>Quando um novo campo for adicionado ele será <strong>selecionado automaticamente</strong>, bastando apenas continuar digitando os valores.</li>
+              <li>Uma forma alternativa para ativar um <strong>botão</strong> é usar a <kbd>Barra&nbsp;de&nbsp;espaço</kbd> em vez de clicar com o mouse.</li>
             </ol>
           </div>
           <div class="modal-footer">
@@ -90,43 +91,43 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-6 col-sm-offset-3">
-            <form name="calculadora" method="post" action="">
+            <form id="calculadora" name="calculadora" method="post" action="">
                 <label id="label-valor" class="text-center">VALOR</label>
                 <label id="label-peso" class="text-center">PESO</label>
 
-                <input type="text" name="valor1" id="valor1" class="form-control valor" value="" title="Valor 1">
-                <input type="text" name="peso1" id="peso1" class="form-control peso" value="" title="Peso 1">
+                <div id="campos">
+                  <input type="text" name="valor1" id="valor1" class="form-control valor" value="" title="Valor 1">
+                  <input type="text" name="peso1" id="peso1" class="form-control peso" value="" title="Peso 1">
 
-                <input type="text" name="valor2" id="valor2" class="form-control valor" value="" title="Valor 2">
-                <input type="text" name="peso2" id="peso2" class="form-control peso" value="" title="Peso 2">
+                  <input type="text" name="valor2" id="valor2" class="form-control valor" value="" title="Valor 2">
+                  <input type="text" name="peso2" id="peso2" class="form-control peso" value="" title="Peso 2">
 
-                <input type="text" name="valor3" id="valor3" class="form-control valor" value="" title="Valor 3">
-                <input type="text" name="peso3" id="peso3" class="form-control peso" value="" title="Peso 3">
+                  <input type="text" name="valor3" id="valor3" class="form-control valor" value="" title="Valor 3">
+                  <input type="text" name="peso3" id="peso3" class="form-control peso" value="" title="Peso 3">
 
-                <input type="text" name="valor4" id="valor4" class="form-control valor" value="" title="Valor 4">
-                <input type="text" name="peso4" id="peso4" class="form-control peso" value="" title="Peso 4">
+                  <input type="text" name="valor4" id="valor4" class="form-control valor" value="" title="Valor 4">
+                  <input type="text" name="peso4" id="peso4" class="form-control peso" value="" title="Peso 4">
 
-                <input type="text" name="valor5" id="valor5" class="form-control valor" value="" title="Valor 5">
-                <input type="text" name="peso5" id="peso5" class="form-control peso" value="" title="Peso 5">
+                  <input type="text" name="valor5" id="valor5" class="form-control valor" value="" title="Valor 5">
+                  <input type="text" name="peso5" id="peso5" class="form-control peso" value="" title="Peso 5">
 
-                <input type="text" name="valor6" id="valor6" class="form-control valor" value="" title="Valor 6">
-                <input type="text" name="peso6" id="peso6" class="form-control peso" value="" title="Peso 6">
+                  <input type="text" name="valor6" id="valor6" class="form-control valor" value="" title="Valor 6">
+                  <input type="text" name="peso6" id="peso6" class="form-control peso" value="" title="Peso 6">
 
-                <input type="text" name="valor7" id="valor7" class="form-control valor" value="" title="Valor 7">
-                <input type="text" name="peso7" id="peso7" class="form-control peso" value="" title="Peso 7">
+                  <input type="text" name="valor7" id="valor7" class="form-control valor" value="" title="Valor 7">
+                  <input type="text" name="peso7" id="peso7" class="form-control peso" value="" title="Peso 7">
 
-                <input type="text" name="valor8" id="valor8" class="form-control valor" value="" title="Valor 8">
-                <input type="text" name="peso8" id="peso8" class="form-control peso" value="" title="Peso 8">
+                  <input type="text" name="valor8" id="valor8" class="form-control valor" value="" title="Valor 8">
+                  <input type="text" name="peso8" id="peso8" class="form-control peso" value="" title="Peso 8">
 
-                <input type="text" name="valor9" id="valor9" class="form-control valor" value="" title="Valor 9">
-                <input type="text" name="peso9" id="peso9" class="form-control peso" value="" title="Peso 9">
+                  <input type="text" name="valor9" id="valor9" class="form-control valor" value="" title="Valor 9">
+                  <input type="text" name="peso9" id="peso9" class="form-control peso" value="" title="Peso 9">
 
-                <input type="text" name="valor10" id="valor10" class="form-control valor" value="" title="Valor 10">
-                <input type="text" name="peso10" id="peso10" class="form-control peso" value="" title="Peso 10">
+                  <input type="text" name="valor10" id="valor10" class="form-control valor" value="" title="Valor 10">
+                  <input type="text" name="peso10" id="peso10" class="form-control peso" value="" title="Peso 10">
+                </div>
 
-                <span id="insert_point"></span>
-
-                <button type="button" id="add_campos" class="btn btn-primary form-control" onclick="addField()">
+                <button type="button" id="add_campos" class="btn btn-primary form-control" onclick="addFields()">
                   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> ADICIONAR NOVOS CAMPOS
                 </button>
 

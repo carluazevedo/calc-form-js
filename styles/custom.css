@@ -1,35 +1,50 @@
+/*
+|-------------------------------------------
+| Calculadora simples em Javascript e jQuery
+|-------------------------------------------
+|
+| Autor ................. Carlu P. Azevedo
+| Versão ................ 2.0.1
+| Criação ............... 24-set-2015
+| Última modificação .... 24-jul-2016
+|
+| Versão deste arquivo .. 1.1
+| Última modificação .... 20-jul-2016
+|
+*/
+
 main {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 form {
-	background-color: #e6e6e6; /* rgba(0,0,0,.1) = #e6e6e6 */
-	box-shadow: 0px 0px 5px rgba(0,0,0,.5);
-	padding: 5px 15px 15px 15px;
+  background-color: #e6e6e6;
+  box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+  padding: 5px 15px 15px 15px;
 }
 
 .modal-title {
-	color: #337ab7;
+  color: #337ab7;
 }
 .valor, #label-valor, #somar, #res_valor {
-	width: 50%;
-	float: left;
+  width: 50%;
+  float: left;
 }
 
 .peso, #label-peso, #resetar, #res_peso {
-	width: 50%;
-	float: rigth;
+  width: 50%;
+  float: rigth;
 }
 
 #somar, #resetar {
-	margin: 5px 0px 5px 0px;
+  margin: 5px 0px 5px 0px;
 }
 
 #total {
-	width: 100%;
-	border-bottom: 1px solid #c0c0c0;
+  width: 100%;
+  border-bottom: 1px solid #c0c0c0;
 }
 
 #dicas-lista li {
-	padding-bottom: 10px;
+  padding-bottom: 10px;
 }

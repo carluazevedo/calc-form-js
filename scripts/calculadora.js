@@ -1,14 +1,25 @@
-/**
- * Calculadora simples em Javascript e jQuery
- * Autor: Carlu P. Azevedo
- */
+/*
+|-------------------------------------------
+| Calculadora simples em Javascript e jQuery
+|-------------------------------------------
+|
+| Autor ................. Carlu P. Azevedo
+| Versão ................ 2.0.1
+| Criação ............... 24-set-2015
+| Última modificação .... 24-jul-2016
+|
+| Versão deste arquivo .. 1.1
+| Última modificação .... 24-jul-2016
+|
+*/
+
 window.onload = document.forms[0].valor1.select();
 
 $(document).ready(function(){
-    $('form').find('.valor').setMask('moeda');
-    $('form').find('.peso').setMask('peso');
-    $('form').find('#res_valor').setMask('moeda-decimal');
-    $('form').find('#res_peso').setMask('peso-decimal');
+  $('form').find('.valor').setMask('moeda');
+  $('form').find('.peso').setMask('peso');
+  $('form').find('#res_valor').setMask('moeda-decimal');
+  $('form').find('#res_peso').setMask('peso-decimal');
 });
 
 var v = new Array();
@@ -25,65 +36,65 @@ for (i = 0; i < v.length; i++) console.log(v[i].id);
 console.log("Initial 'peso' array length: " + p.length);
 for (i = 0; i < p.length; i++) console.log(p[i].id);
 
-function addField() {
-	var v_index = v.length + 1;
-	var p_index = p.length + 1;
+function addFields() {
+  var v_index = v.length + 1;
+  var p_index = p.length + 1;
 
-    /* Define o seletor que será o ponto de referência para inserção dos novos elementos */
-    ip = document.querySelector('#insert_point');
+  /* Define o elemento onde serão inseridos os novos campos */
+  finsert = document.querySelector('#campos');
 
-    /* Novos elementos a serem inseridos */
-    /* Valor */
-    vin = document.createElement('INPUT');
-    /* Peso */
-    pin = document.createElement('INPUT');
+  /* Criação dos novos campos a serem inseridos */
+  /* Valor */
+  vin = document.createElement('INPUT');
+  /* Peso */
+  pin = document.createElement('INPUT');
 
-    /* Atributos dos novos elementos */
-    /* Valor */
-    vin.setAttribute('type', 'text');
-    vin.setAttribute('name', 'valor' + v_index);
-    vin.setAttribute('id', 'valor' + v_index);
-    vin.setAttribute('class', 'form-control valor');
-    vin.setAttribute('value', 0);
-    vin.setAttribute('title', 'Valor ' + v_index);
-    /* Peso */
-    pin.setAttribute('type', 'text');
-    pin.setAttribute('name', 'peso' + p_index);
-    pin.setAttribute('id', 'peso' + p_index);
-    pin.setAttribute('class', 'form-control peso');
-    pin.setAttribute('value', 0);
-    pin.setAttribute('title', 'Peso ' + p_index);
+  /* Atributos dos novos campos */
+  /* Valor */
+  vin.setAttribute('type', 'text');
+  vin.setAttribute('name', 'valor' + v_index);
+  vin.setAttribute('id', 'valor' + v_index);
+  vin.setAttribute('class', 'form-control valor');
+  vin.setAttribute('value', 0);
+  vin.setAttribute('title', 'Valor ' + v_index);
+  /* Peso */
+  pin.setAttribute('type', 'text');
+  pin.setAttribute('name', 'peso' + p_index);
+  pin.setAttribute('id', 'peso' + p_index);
+  pin.setAttribute('class', 'form-control peso');
+  pin.setAttribute('value', 0);
+  pin.setAttribute('title', 'Peso ' + p_index);
 
-    /* Inserção dos novos elementos */
-    document.forms[0].insertBefore(vin, ip);
-    document.forms[0].insertBefore(pin, ip);
+  /* Inserção dos novos campos */
+  finsert.appendChild(vin);
+  finsert.appendChild(pin);
 
-    $('form').find('#valor' + v_index).setMask('moeda');
-    $('form').find('#peso' + p_index).setMask('peso');
+  $('form').find('#valor' + v_index).setMask('moeda');
+  $('form').find('#peso' + p_index).setMask('peso');
 
-    document.getElementById('valor' + v_index).select();
+  document.getElementById('valor' + v_index).select();
 
-    console.log("Updated 'valor' array length: " + v.length);
-    console.log("Updated 'peso'  array length: " + p.length);
+  console.log("Updated 'valor' array length: " + v.length);
+  console.log("Updated 'peso'  array length: " + p.length);
 
-    window.scrollBy(0, 100);
+  window.scrollBy(0, 100);
 }
 
 function sumValues() {
-    for (i = 0; i < v.length; i++) {
-        v_result += parseFloat(v[i].value.replace(",", "."));
-    }
+  for (i = 0; i < v.length; i++) {
+    v_result += parseFloat(v[i].value.replace(",", "."));
+  }
 
-    for (i = 0; i < p.length; i++) {
-        p_result += parseFloat(p[i].value.replace(",", "."));
-    }
+  for (i = 0; i < p.length; i++) {
+    p_result += parseFloat(p[i].value.replace(",", "."));
+  }
 
-    document.forms[0].res_valor.value = v_result.toFixed(2).replace(".", ",");
-    document.forms[0].res_peso.value = p_result.toFixed(3).replace(".", ",");
+  document.forms[0].res_valor.value = v_result.toFixed(2).replace(".", ",");
+  document.forms[0].res_peso.value = p_result.toFixed(3).replace(".", ",");
 
-    $('form').find('#res_valor').setMask('moeda-decimal');
-    $('form').find('#res_peso').setMask('peso-decimal');    	
+  $('form').find('#res_valor').setMask('moeda-decimal');
+  $('form').find('#res_peso').setMask('peso-decimal');    	
 
-    v_result = 0;
-    p_result = 0;
+  v_result = 0;
+  p_result = 0;
 }
