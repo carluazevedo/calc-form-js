@@ -4,9 +4,9 @@
 |-------------------------------------------
 |
 | Autor ................. Carlu P. Azevedo
-| Versão ................ 2.0.1
+| Versão ................ 2.0.2
 | Criação ............... 24-set-2015
-| Última modificação .... 24-jul-2016
+| Última modificação .... 24-nov-2016
 |
 | Versão deste arquivo .. 1.1
 | Última modificação .... 24-jul-2016
@@ -16,10 +16,10 @@
 window.onload = document.forms[0].valor1.select();
 
 $(document).ready(function(){
-  $('form').find('.valor').setMask('moeda');
-  $('form').find('.peso').setMask('peso');
-  $('form').find('#res_valor').setMask('moeda-decimal');
-  $('form').find('#res_peso').setMask('peso-decimal');
+  $('.valor').setMask('moeda');
+  $('.peso').setMask('peso');
+  $('#res_valor').setMask('moeda-decimal');
+  $('#res_peso').setMask('peso-decimal');
 });
 
 var v = new Array();
@@ -69,8 +69,8 @@ function addFields() {
   finsert.appendChild(vin);
   finsert.appendChild(pin);
 
-  $('form').find('#valor' + v_index).setMask('moeda');
-  $('form').find('#peso' + p_index).setMask('peso');
+  $('#valor' + v_index).setMask('moeda');
+  $('#peso' + p_index).setMask('peso');
 
   document.getElementById('valor' + v_index).select();
 
@@ -92,8 +92,8 @@ function sumValues() {
   document.forms[0].res_valor.value = v_result.toFixed(2).replace(".", ",");
   document.forms[0].res_peso.value = p_result.toFixed(3).replace(".", ",");
 
-  $('form').find('#res_valor').setMask('moeda-decimal');
-  $('form').find('#res_peso').setMask('peso-decimal');    	
+  $('#res_valor').setMask('moeda-decimal');
+  $('#res_peso').setMask('peso-decimal');    	
 
   v_result = 0;
   p_result = 0;
