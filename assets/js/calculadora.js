@@ -4,22 +4,24 @@
 |-------------------------------------------
 |
 | Autor ................. Carlu P. Azevedo
-| Versão ................ 2.0.2
+| Versão ................ 2.0.3
 | Criação ............... 24-set-2015
-| Última modificação .... 24-nov-2016
+| Última modificação .... 09-ago-2017
 |
 | Versão deste arquivo .. 1.1
-| Última modificação .... 24-jul-2016
+| Última modificação .... 09-ago-2017
 |
 */
 
-window.onload = document.forms[0].valor1.select();
+/* Função descontinuada por ser incompatível com Google Chrome */
+//window.onload = document.forms[0].valor1.select();
 
 $(document).ready(function(){
   $('.valor').setMask('moeda');
   $('.peso').setMask('peso');
   $('#res_valor').setMask('moeda-decimal');
   $('#res_peso').setMask('peso-decimal');
+  $('#valor1').select();
 });
 
 var v = new Array();
