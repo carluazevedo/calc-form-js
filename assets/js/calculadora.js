@@ -4,12 +4,12 @@
 |-------------------------------------------
 |
 | Autor ................. Carlu P. Azevedo
-| Versão ................ 2.0.3
+| Versão ................ 2.0.4
 | Criação ............... 24-set-2015
-| Última modificação .... 09-ago-2017
+| Última modificação .... 26-jun-2018
 |
-| Versão deste arquivo .. 1.1
-| Última modificação .... 09-ago-2017
+| Versão deste arquivo .. 1.2
+| Última modificação .... 26-jun-2018
 |
 */
 
@@ -100,3 +100,8 @@ function sumValues() {
   v_result = 0;
   p_result = 0;
 }
+
+/* Realiza 'autofocus' no botão 'Não' */
+$('#resetar-modal').on('shown.bs.modal', function() {
+  $('#nao-resetar').focus();
+})

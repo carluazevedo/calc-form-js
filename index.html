@@ -23,13 +23,13 @@
 
     <meta name="description" content="Calculadora simples em Javascript e jQuery">
     <meta name="author" content="Carlu P. Azevedo">
-    <meta name="version" content="2.0.3">
+    <meta name="version" content="2.0.4">
     <meta name="creation" content="24-set-2015">
-    <meta name="last-modification" content="09-ago-2017">
+    <meta name="last-modification" content="26-jun-2018">
   </head>
 
   <body>
-    <!-- Modal markup -->
+    <!-- Modal Dicas -->
     <div class="modal fade" id="dicas-modal" tabindex="-1" role="dialog" aria-labelledby="dicasModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -41,7 +41,9 @@
           </div>
           <div class="modal-body">
             <ol id="dicas-lista">
-              <li>Ao clicar em <strong>LIMPAR CAMPOS</strong> o primeiro campo será <strong>selecionado automaticamente</strong>, bastando apenas digitar os valores.</li>
+              <li>Ao clicar em <span class="label label-danger">LIMPAR&nbsp;CAMPOS</span> será exibida uma <strong>caixa de confirmação</strong>.<br>
+              Quando a caixa de confirmação aparecer, o botão <span class="label label-danger">Não</span> estará <strong>pré-selecionado</strong>.<br>
+              Clicando em <span class="label label-success">Sim</span> os campos serão limpos e o primeiro campo será <strong>selecionado&nbsp;automaticamente</strong>, bastando apenas digitar os valores.</li>
               <li>Para avançar para o <strong>próximo campo</strong> basta pressionar a tecla <kbd>Enter</kbd>.</li>
               <li>Para retornar para o <strong>campo anterior</strong> basta pressionar as teclas <kbd>Shift&nbsp;+&nbsp;Enter</kbd>.</li>
               <li>Mantenha o cursor do mouse sobre qualquer campo de <strong>valor</strong> ou <strong>peso</strong> por algum tempo para exibir o seu <strong>nome</strong>.</li>
@@ -49,7 +51,15 @@
               <li>Quando um novo campo for adicionado ele será <strong>selecionado automaticamente</strong>, bastando apenas continuar digitando os valores.</li>
               <li>Uma forma alternativa para ativar um <strong>botão</strong> é usar a <kbd>Barra&nbsp;de&nbsp;espaço</kbd> em vez de clicar com o mouse.</li>
             </ol>
-            <p class="text-right"><small>Versão: 2.0.3 | 09/08/2017 | Carlu P. Azevedo</small></p>
+            <p class="text-right">
+              <small>
+                Versão: 2.0.4 | 26/06/2018 | Carlu P. Azevedo<br>
+                Para sugestões e correções:
+                <a href="mailto:carluazevedo@gmail.com?Subject=Sobre%20Calculadora%202.0">
+                  carluazevedo@gmail.com
+                </a>
+              </small>
+            </p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
@@ -57,7 +67,29 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    <!-- /Modal markup -->
+    <!-- /Modal Dicas -->
+
+    <!-- Modal Resetar -->
+    <div class="modal fade bs-example-modal-sm" id="resetar-modal" tabindex="-1" role="dialog" aria-labelledby="resetarModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Limpar campos
+            </h4>
+          </div>
+          <div class="modal-body">
+            <p>Deseja realmente limpar os campos?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="nao-resetar">Não</button>
+            <button type="button" class="btn btn-success" onclick="location.reload(true)">Sim</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- /Modal Resetar -->
 
     <header>
       <nav class="navbar navbar-inverse navbar-static-top">
@@ -133,17 +165,12 @@
                 </button>
 
                 <input type="button" value="CALCULAR" id="somar" class="btn btn-success form-control" onclick="sumValues()">
-                <input type="button" value="LIMPAR CAMPOS" id="resetar" class="btn btn-danger form-control" onclick="location.reload(true)">
+                <input type="button" value="LIMPAR CAMPOS" id="resetar" class="btn btn-danger form-control" data-toggle="modal" data-target="#resetar-modal">
 
                 <label id="total" class="text-center">TOTAL</label>
 
                 <input type="text" name="res_valor" id="res_valor" class="form-control" value="" readonly>
                 <input type="text" name="res_peso" id="res_peso" class="form-control" value="" readonly>
-
-                <!-- 
-                <input type="button" name="res_valor" id="res_valor" class="btn btn-default form-control" value="VALOR">
-                <input type="button" name="res_peso" id="res_peso" class="btn btn-default form-control" value="PESO">
-                -->
             </form>
           </div><!-- /.col-sm-6 -->
         </div><!-- /.row -->
